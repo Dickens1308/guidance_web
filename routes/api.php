@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => '/v1/auth/'], function () {
     Route::post('register', [AuthController::class, 'registerApi']);
     Route::post('login', [AuthController::class, 'loginApi']);
+    Route::post('reset/password', [AuthController::class, 'resetApi']);
 });
 
 

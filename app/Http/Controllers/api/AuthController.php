@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
 
 class AuthController extends Controller
 {
@@ -46,6 +47,30 @@ class AuthController extends Controller
         $token = $user->createToken('myapptoken')->plainTextToken;
 
         return response()->json(array('user' => $user, 'token' => $token, 'message' => 'successful login to your account'));
+    }
+   
+    public function resetApi(Request $request): JsonResponse
+    {
+        $field = $request->validate([
+            'email' => ['required', 'string', 'email', 'max:255'],
+        ]);
+
+        try {
+            $response = Password::sendResetLink($request->only('email'));
+
+            switch ($response) {
+                case Password::RESET_LINK_SENT:
+                    return response()->json(array("status" => 200, "message" => trans($response), "data" => array()));
+                case Password::INVALID_USER:
+                    return response()->json(array("status" => 400, "message" => trans($response), "data" => array()));
+            }
+        } catch (\Swift_TransportException $ex) {
+            $arr = array("status" => 400, "message" => "Email Transport link unavailable", "data" => []);
+        } catch (Exception $ex) {
+            $arr = array("status" => 400, "message" => $ex->getMessage(), "data" => []);
+        }
+
+        return response()->json(array("message", "Check your email for password reset link which has been sent"));
     }
 
 
