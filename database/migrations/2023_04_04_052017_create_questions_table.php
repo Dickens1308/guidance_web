@@ -18,12 +18,10 @@ return new class extends Migration {
             $table->string("choice_two");
             $table->string("choice_three");
             $table->string("correct_answer");
-            $table->text("learning_title");
-            $table->text("learning_desc");
             $table->text("code_image_url")->nullable();
 
-            $table->unsignedBigInteger('course_id');
-            $table->foreign('course_id')->references('id')->on('courses');
+            $table->unsignedBigInteger('topic_id');
+            $table->foreign('topic_id')->references('id')->on('topics');
 
             $table->timestamps();
         });

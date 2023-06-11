@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
@@ -17,14 +18,12 @@ class Question extends Model
 
     protected $fillable = [
         'title',
-        'learning_title',
-        'learning_desc',
         'choice_one',
         'choice_two',
         'choice_three',
         'correct_answer',
         'code_image_url',
-        'course_id',
+        'topic_id',
     ];
 
     public function progress(): HasMany
@@ -32,8 +31,8 @@ class Question extends Model
         return $this->hasMany(Progress::class);
     }
 
-    public function course(): BelongsTo
+    public function topic(): BelongsTo
     {
-        return $this->belongsTo(Course::class);
+        return $this->belongsTo(Topic::class);
     }
 }

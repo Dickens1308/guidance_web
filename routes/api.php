@@ -24,10 +24,11 @@ Route::group(['prefix' => '/v1/auth/'], function () {
 
 Route::prefix('/v1/language/')->middleware('auth:sanctum')->group(function () {
     Route::get('', [ApiController::class, 'language']);
-    Route::get('courses/{languageID}', [ApiController::class, 'index']);
+    Route::get('courses/{languageID}', [ApiController::class, 'getCourseByLangId']);
+    Route::get('topics/{courseId}', [ApiController::class, 'getTopicByCourseId']);
     Route::post('question/answer', [ApiController::class, 'save']);
-    Route::get('get_questions/{courseID}', [ApiController::class, 'getQuestionByCourseID']);
-    Route::get('get_results/{courseID}', [ApiController::class, 'getResultsByCourseID']);
+    Route::get('get_questions/{topicID}', [ApiController::class, 'getQuestionBytopicID']);
+    Route::get('get_results/{topicID}', [ApiController::class, 'getResultsBytopicId']);
 });
 
 

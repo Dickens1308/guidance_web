@@ -20,26 +20,40 @@ class Course extends Model
 
     protected $fillable = [
         'title',
-        'slug'
+        'slug',
+        "desc",
+        "sub_desc",
+        "language_id"
     ];
-
-    public function question(): HasMany
-    {
-        return $this->hasMany(Question::class);
-    }
-
-    public function videos(): HasMany
-    {
-        return $this->hasMany(Video::class);
-    }
 
     public function language(): BelongsTo
     {
         return $this->BelongsTo(Language::class);
     }
 
-    public function progressCount(): hasManyThrough
+    public function topics(): HasMany
     {
-        return $this->hasManyThrough(Progress::class, Question::class);
+        return $this->hasMany(Topic::class);
     }
+
+    public function progress(): HasMany
+    {
+        return $this->hasMany(Topic::class);
+    }
+
+    // public function topics()
+    // {
+    //     return $this->hasManyThrough(Question::class, Topic::class);
+    // }
+
+    // public function progress()
+    // {
+    //     return $this->hasManyThrough(Progress::class, Question::class);
+    // }
+
+    // public function progress(): HasManyThrough
+    // {
+    //     return $this->hasManyThrough(Progress::class, Topic::class, 'course_id', 'question_id');
+    // }
+
 }
