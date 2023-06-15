@@ -20,7 +20,7 @@ class Language extends Model
         'slug'
     ];
 
-    public function question(): HasMany
+    public function courses(): HasMany
     {
         return $this->hasMany(Course::class);
     }

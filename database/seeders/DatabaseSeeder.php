@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CourseSeeder::class,
             PythonSeeder::class,
+            RubySeeder::class,
         ]);
     }
 }

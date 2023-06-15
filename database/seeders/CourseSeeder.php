@@ -14,8 +14,8 @@ class CourseSeeder extends Seeder
 {
     protected array $lang = [
         'Python',
-        'Scratch',
         'Ruby',
+        'Scratch',
     ];
 
     /**

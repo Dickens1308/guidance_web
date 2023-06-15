@@ -66,7 +66,7 @@ class PythonSeeder extends Seeder
         $this->createTopics(
             id: 1,
             title: "Introduction to python",
-            video: "intro.mp4",
+            video: "https://firebasestorage.googleapis.com/v0/b/ehabari-76416.appspot.com/o/1.%20What%20is%20Python%20%20Python%20for%20Kids%20%20Python%20Coding%20for%20Kids%20%20Coding%20for%20Kids%20%20Kids%20Coding%20%20Coding_1080p.mp4?alt=media&token=1c9fd0ec-6ab5-4dab-8416-abd15b775ab7&_gl=1*1rs3hbh*_ga*MTI3NDUyMTA4NC4xNjg2NjUxNDY1*_ga_CW55HF8NVT*MTY4NjY1MTQ2NS4xLjEuMTY4NjY1MjM1NC4wLjAuMA..",
             title2: "Introduction to python",
             desc: "Python is a popular programming language used by people all over the world to create all sorts of things, from simple games and quizzes to complex software and websites.",
             desc2: "Python is a great language for kids because it's easy to learn and use, yet powerful enough to create all sorts of cool things. It's also a very popular language, which means there are lots of resources available for learning and getting help.",
@@ -99,13 +99,13 @@ class PythonSeeder extends Seeder
         $this->createTopics(
             id: 2,
             title: "Varialbes",
-            video: "variable.mp4",
+            video: "https://firebasestorage.googleapis.com/v0/b/ehabari-76416.appspot.com/o/2.%20Coding%20For%20Kids%2C%20Kids%20Python%20101%20Chapter%204%20Variables_720p.mp4?alt=media&token=6e9761bf-d041-494f-b5ba-2a0d0d9443c5&_gl=1*1wnp7yq*_ga*MTI3NDUyMTA4NC4xNjg2NjUxNDY1*_ga_CW55HF8NVT*MTY4NjY1MTQ2NS4xLjEuMTY4NjY1MjQ3My4wLjAuMA..",
             title2: "Understanding variables",
             desc: "In Python, a variable is like a container that can hold a value, just like a box can hold an object. You can give a variable any name you like, as long as it follows some rules. Once you create a variable and give it a value, you can use the variable in your code to do different things.",
             desc2: "Here's an example of how to create a variable and assign a value to it:",
-            example: "# Creating a variable called 'score' and assigning a value of 10 \n\nscore = 10",
+            example: "# Creating a variable called 'score' \n# and assigning a value of 10 \n\nscore = 10",
             explain: "In this example, we created a variable called score and assigned it a value of 10. Now, we can use the score variable in our code to represent the value 10. For example:",
-            practise: "#Printing the value of the 'score' variable \n\nprint(score) \n\nThis will output: 10"
+            practise: "#Printing the value of the 'score' \n#variable \n\nprint(score) \n\nThis will output: 10"
         );
 
         //Topic 1 Questions
@@ -337,7 +337,7 @@ class PythonSeeder extends Seeder
         $this->createTopics(
             id: 4,
             title: "For Loop",
-            video: 'loop.mp4',
+            video: 'https://firebasestorage.googleapis.com/v0/b/ehabari-76416.appspot.com/o/3.%20Coding%20For%20Kids%2C%20Kids%20Python%20101%20Chapter%208%20For%20Loop%20Statements_720p.mp4?alt=media&token=2737ad67-b3fc-48ac-8f5d-fe78c56719e1&_gl=1*oqhhnp*_ga*MTI3NDUyMTA4NC4xNjg2NjUxNDY1*_ga_CW55HF8NVT*MTY4NjY1MTQ2NS4xLjEuMTY4NjY1MjUwMi4wLjAuMA..',
             title2: "Understanding For Loop",
             desc: "A for loop is used to loop through a sequence (such as a list, tuple, or string) and execute the same code for each item in the sequence.",
             desc2: "Here's an example of a for loop that prints the numbers from 1 to 5:",
@@ -359,7 +359,7 @@ class PythonSeeder extends Seeder
         $this->createTopics(
             id: 4,
             title: "While Loop",
-            video: 'while.mp4',
+            video: 'https://firebasestorage.googleapis.com/v0/b/ehabari-76416.appspot.com/o/4.%20While%20loop%20in%20Python%20%20Animated%20Video_1080p.mp4?alt=media&token=b545f64d-0d75-498c-af7a-cbd61b9277f0&_gl=1*1yypxc6*_ga*MTI3NDUyMTA4NC4xNjg2NjUxNDY1*_ga_CW55HF8NVT*MTY4NjY1MTQ2NS4xLjEuMTY4NjY1MjU3Ni4wLjAuMA..',
             title2: "Understanding While Loop",
             desc: "A while loop is used to repeat a set of instructions as long as a certain condition is true.",
             desc2: "Here's an example of a while loop that prints the numbers from 1 to 5:",
@@ -453,5 +453,7 @@ class PythonSeeder extends Seeder
             image: null,
             topicId: 11,
         );
+
+        /**************************PYthon Course 5 End *******************************/
     }
 }

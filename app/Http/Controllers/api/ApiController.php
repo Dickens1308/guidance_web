@@ -8,8 +8,10 @@ use App\Models\Language;
 use App\Models\Progress;
 use App\Models\Question;
 use App\Models\Topic;
+use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ApiController extends Controller
 {
@@ -133,5 +135,61 @@ class ApiController extends Controller
         } else {
             return response()->json(array('message' => 'Already answered the question', 'error' => $checkIfExist));
         }
+    }
+
+
+    public function getReports(Request $request)
+    {
+        $parentId = $request->user()->id;
+        $child = User::where('parent_id', $parentId)->first();
+
+        $language = Language::where('id', 1)->select('id', 'title')->first();
+        $language2 = Language::where('id', 2)->select('id', 'title')->first();
+        $language3 = Language::where('id', 3)->select('id', 'title')->first();
+
+
+        $questionCount = $this->getTotalQuestion($language);
+        $questionCount2 = $this->getTotalQuestion($language2);
+        $questionCount3 = $this->getTotalQuestion($language3);
+
+        $answerCount = $this->getTotalAnswers($language, $child);
+        $answerCount2 = $this->getTotalAnswers($language2, $child);
+        $answerCount3 = $this->getTotalAnswers($language3, $child);
+
+        return response()->json(
+            array(
+                'message' => 'progress',
+                'data' => [
+                    'pythonQuestion' => $questionCount,
+                    'pythonAnswers' => $answerCount,
+                    'RubyQuestion' => $questionCount2,
+                    'RubyAnswers' => $answerCount2,
+                    'scratchQuestion' => $questionCount3,
+                    'scratchAnswers' => $answerCount3,
+                ]
+            )
+        );
+    }
+
+    private function getTotalQuestion($language)
+    {
+        return $language->courses()
+            ->with('topics.questions')
+            ->get()
+            ->flatMap(function ($course) {
+                return $course->topics->pluck('questions')->flatten();
+            })
+            ->count();
+    }
+
+    private function getTotalAnswers($language, $child)
+    {
+        return DB::table('progress')
+            ->join('questions', 'progress.question_id', '=', 'questions.id')
+            ->join('topics', 'questions.topic_id', '=', 'topics.id')
+            ->join('courses', 'topics.course_id', '=', 'courses.id')
+            ->where('progress.user_id', $child->id)
+            ->where('courses.language_id', $language->id)
+            ->count();
     }
 }
