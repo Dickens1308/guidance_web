@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @method static create(array $array)
  * @method static get()
  * @method static select(string $string, string $string)
+ * @method static where(string $string, int $int)
  */
 class Language extends Model
 {

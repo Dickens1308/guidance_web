@@ -29,7 +29,8 @@ Route::prefix('/v1/language/')->middleware('auth:sanctum')->group(function () {
     Route::post('question/answer', [ApiController::class, 'save']);
     Route::get('get_questions/{topicID}', [ApiController::class, 'getQuestionBytopicID']);
     Route::get('get_results/{topicID}', [ApiController::class, 'getResultsBytopicId']);
-    Route::get('get_reports', [ApiController::class, 'getReports']);
+    Route::get('get_reports/{child}', [ApiController::class, 'getReports']);
+    Route::get('children', [ApiController::class, 'children']);
 });
 
 

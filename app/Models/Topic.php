@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
+/**
+ * @method static where(string $string, $courseID)
+ */
 class Topic extends Model
 {
     use HasFactory;
