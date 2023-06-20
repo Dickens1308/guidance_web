@@ -3,64 +3,21 @@
 namespace Database\Seeders;
 
 
+use App\Models\Course;
 use App\Models\Question;
 use App\Models\Topic;
 use Illuminate\Database\Seeder;
-use App\Models\Course;
 use Illuminate\Support\Str;
 
 
 class RubySeeder extends Seeder
 {
-    private function createCourse($title, $desc, $subDesc): void
-    {
-        Course::create([
-            'title' => $title,
-            'slug' => Str::slug($title),
-            "desc" => $desc,
-            "sub_desc" => $subDesc,
-            'language_id' => 2,
-        ]);
-    }
-
-    private function createTopics($id, $title, $video, $title2, $desc, $desc2, $example, $explain, $practise): void
-    {
-        Topic::create([
-            'title' => $title,
-            'slug' => Str::slug($title),
-            'course_id' => $id,
-            'video_url' => $video,
-            'learning_title' => $title2,
-            'learning_desc' => $desc,
-            'learning_desc_sub' => $desc2,
-            "code_example" => $example,
-            "code_explanation" => $explain,
-            "code_practise" => $practise,
-        ]);
-    }
-
-
-    private function createQuestion($title, $a, $b, $c, $correct, $image, $topicId): void
-    {
-        Question::create([
-            'title' => $title,
-            'slug' => Str::slug($title),
-            'choice_one' => $a,
-            'choice_two' => $b,
-            'choice_three' => $c,
-            'correct_answer' => $correct,
-            'code_image_url' => $image,
-            'topic_id' => $topicId,
-        ]);
-    }
-
     public function run(): void
     {
         /**************************Ruby Course 6 Start *******************************/
         $this->createCourse(
             title: "Ruby Tutorial",
-            desc: null,
-            subDesc: null
+            desc: null
         );
 
         //Ruby Topics 12
@@ -74,6 +31,17 @@ class RubySeeder extends Seeder
             example: null,
             explain: null,
             practise: null,
+            first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
         //Topic 12 Questions
@@ -92,8 +60,7 @@ class RubySeeder extends Seeder
         /**************************Ruby Course 7 Start *******************************/
         $this->createCourse(
             title: "Ruby - Environment Setup",
-            desc: null,
-            subDesc: null
+            desc: null
         );
 
         //Ruby Topics 13
@@ -106,7 +73,18 @@ class RubySeeder extends Seeder
             desc2: "Popular Ruby Editors \nTo write your Ruby programs, you will need an editor If you are working on Windows machine, then you can use any simple text editor like Notepad or Edit plus. \n\nVIM (Vi IMproved) is a very simple text editor. This is available on almost all Unix machines and now Windows as well. Otherwise, your can use your favorite vi editor to write Ruby programs. \n\nRubyWin is a Ruby Integrated Development Environment (IDE) for Windows. \n\nRuby Development Environment (RDE) is also a very good IDE for windows users",
             example: null,
             explain: null,
-            practise: null
+            practise: null,
+            first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
         /**************************Ruby Course 7 End *********************************/
@@ -115,8 +93,7 @@ class RubySeeder extends Seeder
         /**************************Ruby Course 8 Start *******************************/
         $this->createCourse(
             title: "Ruby - Syntax",
-            desc: null,
-            subDesc: null
+            desc: null
         );
 
         //Ruby Topics 14
@@ -129,7 +106,18 @@ class RubySeeder extends Seeder
             desc2: "Here, we assumed that you have Ruby interpreter available in /usr/bin directory. Now, try to run this program as follows",
             example: "\t#!/usr/bin/ruby -w \n\n\tputs 'Hello, Ruby!'",
             explain: "\$ruby test.rb \n\n This will produce the following result  \n\t\t Hello, Ruby!",
-            practise: null
+            practise: null,
+            first: "#!/usr/bin/ruby -w",
+            second: "\t\tputs 'Hello, Ruby!'",
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
         /**************************Ruby Course 8 End *******************************/
@@ -137,8 +125,7 @@ class RubySeeder extends Seeder
         /**************************Ruby Course 9 Start *****************************/
         $this->createCourse(
             title: "Ruby - Syntax",
-            desc: null,
-            subDesc: null
+            desc: null
         );
 
         //Ruby Topics 15
@@ -151,7 +138,18 @@ class RubySeeder extends Seeder
             desc2: "Take the example of any vehicle. It comprises wheels, horsepower, and fuel or gas tank capacity. These characteristics form the data members of the class Vehicle. You can differentiate one vehicle from the other with the help of these characteristics. \n\n\n A vehicle can also have certain functions, such as halting, driving, and speeding. Even these functions form the data members of the class Vehicle. You can, therefore, define a class as a combination of characteristics and functions. \n\n\nA class Vehicle can be defined as",
             example: "Class Vehicle { \n\t\tNumber no_of_wheels \n\t\tNumber horsepower \n\t\tCharacters type_of_tank \n\t\tNumber Capacity \n\t\tFunction speeding {\n\t} \n\t\tFunction driving { \n\t} \n\t\tFunction halting {\n\t}\n}",
             explain: "By assigning different values to these data members, you can form several instances of the class Vehicle. For example, an airplane has three wheels, horsepower of 1,000, fuel as the type of tank, and a capacity of 100 liters. In the same way, a car has four wheels, horsepower of 200, gas as the type of tank, and a capacity of 25 liters.",
-            practise: null
+            practise: null,
+            first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
         //Topic 15 Questions
@@ -211,8 +209,7 @@ class RubySeeder extends Seeder
         /**************************Ruby Course 10 Start *****************************/
         $this->createCourse(
             title: "Variables, Constants and Literals",
-            desc: null,
-            subDesc: null
+            desc: null
         );
 
         //Ruby Topics 16
@@ -225,7 +222,18 @@ class RubySeeder extends Seeder
             desc2: "Here is an example showing the usage of global variable.",
             example: "#!/usr/bin/ruby\n\$global_variable = 10 \nclass Class1 \n\t\tdef print_global \n\t\tputs 'Global variable in Class1 is #\$global_variable'\n\t\tend\n\tend \n\nclass Class2 \n\t\tdef print_global \n\t\tputs 'Global variable in Class2 is #\$global_variable' \n\tend \nend \nclass1obj = Class1.new \nclass1obj.print_global \nclass2obj = Class2.new \nclass2obj.print_global",
             explain: "Here \$global_variable is a global variable. This will produce the following result \nNOTE - In Ruby, you CAN access value of any variable or constant by putting a hash \n(#) character just before that variable or constant. \n\n\t\tGlobal variable in Class1 is 10 \n\n\t\tGlobal variable in Class2 is 10",
-            practise: null
+            practise: null,
+            first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
         $this->createQuestion(
@@ -263,8 +271,7 @@ class RubySeeder extends Seeder
         /**************************Ruby Course 11 Start ***************************/
         $this->createCourse(
             title: "Local Variables",
-            desc: null,
-            subDesc: null
+            desc: null
         );
 
         //Ruby Topics 16
@@ -277,7 +284,18 @@ class RubySeeder extends Seeder
             desc2: "Assignment to uninitialized local variables also serves as variable declaration. The variables start to exist until the end of the current scope is reached. The lifetime of local variables is determined when Ruby parses the program. \n\nIn the above example, local variables are id, name and addr.",
             example: null,
             explain: null,
-            practise: null
+            practise: null,
+            first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
         $this->createQuestion(
@@ -295,8 +313,7 @@ class RubySeeder extends Seeder
         /**************************Ruby Course 12 Start ***************************/
         $this->createCourse(
             title: "Basic Literals",
-            desc: "The rules Ruby uses for literals are simple and intuitive. This section explains all basic Ruby Literals",
-            subDesc: null
+            desc: "The rules Ruby uses for literals are simple and intuitive. This section explains all basic Ruby Literals"
         );
 
         //Ruby Topics 17
@@ -310,6 +327,17 @@ class RubySeeder extends Seeder
             example: "\n\t\t123 # Fixnum decimal \n\t\t1_234 # Fixnum decimal with underline \n\t\t-500 # Negative Fixnum \n\t\t0377 # octal \n\t\t0xff # hexadecimal \n\t\t0b1011 # binary \n\t\t?a # character code for 'a' \n\t\t?\n # code for a newline (0x0a) \n\t\t12345678901234567890 # Bignum",
             explain: "NOTE − Class and Objects are explained in a separate chapter of this tutorial.",
             practise: null
+            , first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
 
@@ -323,7 +351,17 @@ class RubySeeder extends Seeder
             desc2: null,
             example: "\n\t\t123.4 # floating point value \n\t\t1.0e6 # scientific notation \n\t\t4E20 # dot not required \n\t\t4e+20 # sign before exponential",
             explain: null,
-            practise: null
+            practise: null, first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
 
@@ -337,7 +375,17 @@ class RubySeeder extends Seeder
             desc2: null,
             example: "#!/usr/bin/ruby -w \n\t\tputs 'escape using '\\'';\n\t\tputs 'That\'s right';",
             explain: "This will produce the following result- \nescape using '\' That's right \n\nYou can substitute the value of any Ruby expression into a string using the sequence #{expr }. Here, expr could be any ruby expression.",
-            practise: "\n\t\t\t#!/usr/bin/ruby -w \n\t\t\tputs 'Multiplication Value : #{24*60*60}'; \n\n\t\t\tThis will produce the following result \n\t\t\tMultiplication Value : 86400"
+            practise: "\n\t\t\t#!/usr/bin/ruby -w \n\t\t\tputs 'Multiplication Value : #{24*60*60}'; \n\n\t\t\tThis will produce the following result \n\t\t\tMultiplication Value : 86400", first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
         /**************************Ruby Course 12 End *****************************/
@@ -346,8 +394,7 @@ class RubySeeder extends Seeder
         /**************************Ruby Course 13 Start ***************************/
         $this->createCourse(
             title: "Arrays",
-            desc: null,
-            subDesc: null
+            desc: null
         );
 
         //Ruby Topics 20
@@ -360,7 +407,17 @@ class RubySeeder extends Seeder
             desc2: null,
             example: "#!/usr/bin/ruby \nary = [ 'fred', 10, 3.14, 'This is a string', 'last element', ] \nary.each do |i| \n\t\tputs i \nend",
             explain: "This will produce the following result − \nfred \n10 \n3.14 \nThis is a string \nlast element",
-            practise: null
+            practise: null, first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
         /**************************Ruby Course 13 End *****************************/
@@ -368,8 +425,7 @@ class RubySeeder extends Seeder
         /**************************Ruby Course 14 Start ***************************/
         $this->createCourse(
             title: "Hashes",
-            desc: null,
-            subDesc: null
+            desc: null
         );
 
         //Ruby Topics 21
@@ -382,7 +438,17 @@ class RubySeeder extends Seeder
             desc2: null,
             example: "\n\t\t#!/usr/bin/ruby \n\t\thsh = colors = { 'red' => 0xf00, 'green' => 0x0f0, 'blue' => 0x00f } \n\t\thsh.each do |key, value| \n\t\t\t\tprint key, ' is ', value, '\\n' \nend",
             explain: "This will produce the following result − \n\t\tred is 3840 \n\t\tgreen is 240 \n\t\tblue is 15",
-            practise: null
+            practise: null, first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
         /**************************Ruby Course 14 End *****************************/
@@ -390,8 +456,7 @@ class RubySeeder extends Seeder
         /**************************Ruby Course 15 Start ***************************/
         $this->createCourse(
             title: "Conditional Statements",
-            desc: null,
-            subDesc: null
+            desc: null
         );
 
         //Ruby Topics 22
@@ -405,7 +470,17 @@ class RubySeeder extends Seeder
             example: "\n\t\tif conditional [then] \n\t\t\t\tcode... \n\t\t[elsif conditional [then] \n\t\t\t\tcode...]... \n\t\t[else \n\t\t\t\tcode...] \n\t\tend",
             explain: "if expressions are used for conditional execution. The values false and nil are false, and everything else are true. Notice Ruby uses elsif, not else if nor elif. \n\nExecutes code if the conditional is true. If the conditional is not true, code specified in the else clause is executed. \n\nAn if expression's conditional is separated from code by the reserved word then, a newline, or a semicolon.",
             practise: "\n\t#!/usr/bin/ruby \n\tx = 1 \n\tif x > 2 \n\t\t\tputs 'x is greater than 2' \n\telsif x <= 2 and x!=0 \n\t\t\tputs 'x is 1' \n\telse \n\t\tputs 'I can't guess the number' \n\t end \n\n\n\t The result is x is 1"
-        );
+            , first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,);
 
 
         $this->createQuestion(
@@ -439,7 +514,17 @@ class RubySeeder extends Seeder
             desc2: "Example",
             example: "\t\t#!/usr/bin/ruby \n\t\t\$debug = 1 \n\t\tprint 'debug\\n' if \$debug",
             explain: "This will produce the following result − \n\n\t\t\t\tdebug",
-            practise: null,
+            practise: null, first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
 
@@ -473,7 +558,17 @@ class RubySeeder extends Seeder
             desc2: "Executes code if conditional is false. If the conditional is true, code specified in the else clause is executed. \n\n\nExample",
             example: "\t#!/usr/bin/ruby \n\tx = 1 \n\tunless x>=2 \n\t\t\tputs 'x is less than 2' \n\telse puts 'x is greater than 2' \n\tend",
             explain: "This will produce the following result − \n\n\t\t\tx is less than 2",
-            practise: null,
+            practise: null, first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
         $this->createQuestion(
@@ -506,7 +601,17 @@ class RubySeeder extends Seeder
             desc2: null,
             example: "\n\t\t\t#!/usr/bin/ruby \n\t\t\t\$var = 1 \n\t\t\tprint '1 -- Value is set\n' if \$var \n\t\t\tprint '2 -- Value is set\n' unless \$var \n\t\t\t\$var = false \n\t\t\tprint '3 -- Value is set\n' unless \$var",
             explain: "This will produce the following result − \n\n\t\t\t1 -- Value is set \n\t\t\t3 -- Value is set",
-            practise: null,
+            practise: null, first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
         $this->createQuestion(
@@ -540,7 +645,17 @@ class RubySeeder extends Seeder
             desc2: "Compares the expression specified by case and that specified by when using the === operator and executes the code of the when clause that matches. \n\nThe expression specified by the when clause is evaluated as the left operand. If no when clauses match, case executes the code of the else clause.\n\nA when statement's expression is separated from code by the reserved word then, a newline, or a semicolon. Thus − \n\t\tcase expr0 \n\t\twhen expr1, expr2 \n\t\t\t\tstmt1 \n\t\twhen expr3, expr4 \n\t\t\t\tstmt2 \n\t\telse \n\t\t\t\tstmt3 \n\t\tend",
             example: "#!/usr/bin/ruby \n\$age = 5 \n\tcase \$age \n\t\twhen 0 .. 2 \n\t\t\t\tputs 'baby' \n\t\twhen 3 .. 6 \n\t\t\t\tputs 'little child' \n\t\twhen 7 .. 12 \n\t\t\t\tputs 'child' \n\t\twhen 13 .. 18 \n\t\t\t\tputs 'youth' \n\t\telse \n\t\t\t\tputs 'adult' \n\t\tend",
             explain: "\n\n\nThis will produce the following result − \n\n\t\t\t\tlittle child",
-            practise: null,
+            practise: null, first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
         $this->createQuestion(
@@ -598,8 +713,7 @@ class RubySeeder extends Seeder
         /**************************Ruby Course 16 Start *****************************/
         $this->createCourse(
             title: "Loops Statements",
-            desc: "Loops in Ruby are used to execute the same block of code a specified number of times. This chapter details all the loop statements supported by Ruby.",
-            subDesc: null
+            desc: "Loops in Ruby are used to execute the same block of code a specified number of times. This chapter details all the loop statements supported by Ruby."
         );
 
         //Ruby Topics 27
@@ -612,7 +726,17 @@ class RubySeeder extends Seeder
             desc2: "Executes code while conditional is true. A while loop's conditional is separated from code by the reserved word do, a newline, backslash \, or a semicolon ;.",
             example: "#!/usr/bin/ruby \n\$i = 0 \n\$num = 5 \nwhile \$i < \$num do \n\t\t\tputs('Inside the loop i = \#\$i' ) \n\t\t\t\$i +=1 \nend",
             explain: "This will produce the following result − \n\n\n\t\tInside the loop i = 0 \n\t\tInside the loop i = 1 \n\t\tInside the loop i = 2 \n\t\tInside the loop i = 3 \n\t\tInside the loop i = 4",
-            practise: null
+            practise: null, first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
 
@@ -646,7 +770,17 @@ class RubySeeder extends Seeder
             desc2: "If a while modifier follows a begin statement with no rescue or ensure clauses, code is executed once before conditional is evaluated.",
             example: "\n\t#!/usr/bin/ruby \n\t\$i = 0 \n\t\$num = 5 \n\tbegin \n\t\t\tputs('Inside the loop i = \#\$i') \n\t\t\t\$i +=1 \n\tend while \$i < \$num",
             explain: "This will produce the following result − \n\n\t\tInside the loop i = 0 \n\t\tInside the loop i = 1 \n\t\tInside the loop i = 2 \n\t\tInside the loop i = 3 \n\t\tInside the loop i = 4",
-            practise: null
+            practise: null, first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
         $this->createQuestion(
@@ -690,7 +824,17 @@ class RubySeeder extends Seeder
             desc2: "Executes code while conditional is false. An until statement's conditional is separated from code by the reserved word do, a newline, or a semicolon.",
             example: "\n\t\t\#!/usr/bin/ruby \n\t\t\$i = 0 \n\t\t\$num = 5 \n\t\tuntil \$i > \$num do \n\t\t\t\tputs('Inside the loop i = \#\$i') \n\t\t\\t\t\$i +=1; \n\t\tend",
             explain: "This will produce the following result − \n\n\t\t\t\tInside the loop i = 0 \n\t\t\t\tInside the loop i = 1 \n\t\t\t\tInside the loop i = 2 \n\t\t\t\tInside the loop i = 3 \n\t\t\t\tInside the loop i = 4 \n\t\t\t\tInside the loop i = 5",
-            practise: null
+            practise: null, first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
 
@@ -737,7 +881,17 @@ class RubySeeder extends Seeder
             desc2: "Executes code while conditional is false. If an until modifier follows a begin statement with no rescue or ensure clauses, code is executed once before conditional is evaluated.",
             example: " \t\t#!/usr/bin/ruby \n\t\t\$i = 0 \n\t\t\$num = 5 \n\t\tbegin \n\t\t\t\tputs('Inside the loop i = \#\$i') \n\t\t\t\t\$i +=1; \n\t\tend until \$i > \$num ",
             explain: "This will produce the following result − \n\n\t\t\tInside the loop i = 0 \n\t\t\tInside the loop i = 1 \n\t\t\tInside the loop i = 2 \n\t\t\tInside the loop i = 3 \n\t\t\tInside the loop i = 4 \n\t\t\tInside the loop i = 5             ",
-            practise: null
+            practise: null, first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
         $this->createQuestion(
@@ -771,7 +925,17 @@ class RubySeeder extends Seeder
             desc2: "Executes code once for each element in expression.",
             example: "#!/usr/bin/ruby \n\t\tfor i in 0..5 \n\t\t\t\tputs 'Value of local variable is \#{i}' \nend ",
             explain: "Here, we have defined the range 0..5. The statement for i in 0..5 will allow i to take values in the range from 0 to 5 (including 5). \n\n\This will produce the following result − \n\n\n\t\t\tValue of local variable is 0 \n\t\t\tValue of local variable is 1 \n\t\t\tValue of local variable is 2 \n\t\t\tValue of local variable is 3 \n\t\t\tValue of local variable is 4 \n\t\t\tValue of local variable is 5             ",
-            practise: null
+            practise: null, first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
         $this->createQuestion(
@@ -805,7 +969,17 @@ class RubySeeder extends Seeder
             desc2: "except that a for loop doesn't create a new scope for local variables. A for loop's expression is separated from code by the reserved word do, a newline, or a semicolon.",
             example: "\n\t\t#!/usr/bin/ruby \n\t\t(0..5).each do |i| \n\t\t\t\tputs 'Value of local variable is #{i}' \n\t\tend",
             explain: "This will produce the following result − \n\n\t\t\tValue of local variable is 0 \n\t\t\tValue of local variable is 1 \n\t\t\tValue of local variable is 2 \n\t\t\tValue of local variable is 3 \n\t\t\tValue of local variable is 4 \n\t\t\tValue of local variable is 5",
-            practise: null
+            practise: null, first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
         $this->createQuestion(
@@ -829,7 +1003,17 @@ class RubySeeder extends Seeder
             desc2: "Terminates the most internal loop. Terminates a method with an associated block if called within the block (with the method returning nil).",
             example: "\t\t#!/usr/bin/ruby \n\t\tfor i in 0..5 \n\t\tif i > 2 then \n\t\t\tbreak \n\t\tend \n\t\tputs 'Value of local variable is \#{i}' \n\t\tend",
             explain: "This will produce the following result − \n\n\t\t\tValue of local variable is 0 \n\t\t\tValue of local variable is 1 \n\t\t\tValue of local variable is 2",
-            practise: null
+            practise: null, first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
         $this->createQuestion(
@@ -844,5 +1028,57 @@ class RubySeeder extends Seeder
 
 
         /**************************Ruby Course 16 End *****************************/
+    }
+
+    private function createCourse($title, $desc): void
+    {
+        Course::create([
+            'title' => $title,
+            'slug' => Str::slug($title),
+            "desc" => $desc,
+            "sub_desc" => null,
+            'language_id' => 2,
+        ]);
+    }
+
+    private function createTopics($id, $title, $video, $title2, $desc, $desc2, $example, $explain, $practise, $first, $second, $third, $fourth, $fifth, $sixth, $seventh, $eighth, $ninth, $tenth, $order): void
+    {
+        Topic::create([
+            'title' => $title,
+            'slug' => Str::slug($title),
+            'course_id' => $id,
+            'video_url' => $video,
+            'learning_title' => $title2,
+            'learning_desc' => $desc,
+            'learning_desc_sub' => $desc2,
+            "code_example" => $example,
+            "code_explanation" => $explain,
+            "code_practise" => $practise,
+            "code_first_line" => $first,
+            "code_second_line" => $second,
+            "code_third_line" => $third,
+            "code_fourth_line" => $fourth,
+            "code_fifth_line" => $fifth,
+            "code_six_line" => $sixth,
+            "code_seven_line" => $seventh,
+            "code_eight_line" => $eighth,
+            "code_nine_line" => $ninth,
+            "code_ten_line" => $tenth,
+            "code_order" => $order,
+        ]);
+    }
+
+    private function createQuestion($title, $a, $b, $c, $correct, $image, $topicId): void
+    {
+        Question::create([
+            'title' => $title,
+            'slug' => Str::slug($title),
+            'choice_one' => $a,
+            'choice_two' => $b,
+            'choice_three' => $c,
+            'correct_answer' => $correct,
+            'code_image_url' => $image,
+            'topic_id' => $topicId,
+        ]);
     }
 }

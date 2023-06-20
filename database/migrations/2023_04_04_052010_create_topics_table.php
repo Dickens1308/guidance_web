@@ -23,6 +23,18 @@ return new class extends Migration {
             $table->text("code_explanation")->nullable();
             $table->text("code_practise")->nullable();
 
+            $table->text("code_first_line")->nullable();
+            $table->text("code_second_line")->nullable();
+            $table->text("code_third_line")->nullable();
+            $table->text("code_fourth_line")->nullable();
+            $table->text("code_fifth_line")->nullable();
+            $table->text("code_six_line")->nullable();
+            $table->text("code_seven_line")->nullable();
+            $table->text("code_eight_line")->nullable();
+            $table->text("code_nine_line")->nullable();
+            $table->text("code_ten_line")->nullable();
+            $table->text("code_order")->nullable();
+
             $table->unsignedBigInteger('course_id');
             $table->foreign('course_id')->references('id')->on('courses');
 

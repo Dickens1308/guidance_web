@@ -2,60 +2,18 @@
 
 namespace Database\Seeders;
 
+use App\Models\Course;
 use App\Models\Question;
 use App\Models\Topic;
 use Illuminate\Database\Seeder;
-use App\Models\Course;
 use Illuminate\Support\Str;
 
 
 class PythonSeeder extends Seeder
 {
-    private function createCourse($title, $desc, $subDesc): void
-    {
-        Course::create([
-            'title' => $title,
-            'slug' => Str::slug($title),
-            "desc" => $desc,
-            "sub_desc" => $subDesc,
-            'language_id' => 1,
-        ]);
-    }
-
-    private function createTopics($id, $title, $video, $title2, $desc, $desc2, $example, $explain, $practise): void
-    {
-        Topic::create([
-            'title' => $title,
-            'slug' => Str::slug($title),
-            'course_id' => $id,
-            'video_url' => $video,
-            'learning_title' => $title2,
-            'learning_desc' => $desc,
-            'learning_desc_sub' => $desc2,
-            "code_example" => $example,
-            "code_explanation" => $explain,
-            "code_practise" => $practise,
-        ]);
-    }
-
-
-    private function createQuestion($title, $a, $b, $c, $correct, $image, $topicId): void
-    {
-        Question::create([
-            'title' => $title,
-            'slug' => Str::slug($title),
-            'choice_one' => $a,
-            'choice_two' => $b,
-            'choice_three' => $c,
-            'correct_answer' => $correct,
-            'code_image_url' => $image,
-            'topic_id' => $topicId,
-        ]);
-    }
-
     public function run(): void
     {
-        /**************************PYthon Course 1 Start *******************************/
+        /**************************Python Course 1 Start *******************************/
         $this->createCourse(
             title: "Introduction to Python",
             desc: null,
@@ -73,6 +31,17 @@ class PythonSeeder extends Seeder
             example: null,
             explain: null,
             practise: null,
+            first: null,
+            second: null,
+            third: null,
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: null,
         );
 
         //Topic 1 Questions
@@ -98,14 +67,25 @@ class PythonSeeder extends Seeder
         //Python Topics 1
         $this->createTopics(
             id: 2,
-            title: "Varialbes",
+            title: "Variables",
             video: "https://firebasestorage.googleapis.com/v0/b/ehabari-76416.appspot.com/o/2.%20Coding%20For%20Kids%2C%20Kids%20Python%20101%20Chapter%204%20Variables_720p.mp4?alt=media&token=6e9761bf-d041-494f-b5ba-2a0d0d9443c5&_gl=1*1wnp7yq*_ga*MTI3NDUyMTA4NC4xNjg2NjUxNDY1*_ga_CW55HF8NVT*MTY4NjY1MTQ2NS4xLjEuMTY4NjY1MjQ3My4wLjAuMA..",
             title2: "Understanding variables",
             desc: "In Python, a variable is like a container that can hold a value, just like a box can hold an object. You can give a variable any name you like, as long as it follows some rules. Once you create a variable and give it a value, you can use the variable in your code to do different things.",
             desc2: "Here's an example of how to create a variable and assign a value to it:",
             example: "# Creating a variable called 'score' \n# and assigning a value of 10 \n\nscore = 10",
             explain: "In this example, we created a variable called score and assigned it a value of 10. Now, we can use the score variable in our code to represent the value 10. For example:",
-            practise: "#Printing the value of the 'score' \n#variable \n\nprint(score) \n\nThis will output: 10"
+            practise: "#Printing the value of the 'score' variable \n\nprint(score) \n\nThis will output: 10",
+            first: "#Printing the value of the 'score' variable and assigning a value of 10 ",
+            second: "score",
+            third: "=",
+            fourth: "10",
+            fifth: "print(score)",
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: "second-third-fourth-fifth"
         );
 
         //Topic 1 Questions
@@ -139,9 +119,9 @@ class PythonSeeder extends Seeder
             topicId: 2
         );
 
-        /**************************PYthon Course 2 End *******************************/
+        /**************************Python Course 2 End *******************************/
 
-        /**************************PYthon Course 3 Start *******************************/
+        /**************************Python Course 3 Start *******************************/
         $this->createCourse(
             title: "Data Types",
             desc: "In Python, data types are like different types of boxes that can hold different types of values. Some common data types in Python include:",
@@ -158,7 +138,18 @@ class PythonSeeder extends Seeder
             desc2: null,
             example: "#Creating an integer variable \n\nmy_integer = 5",
             explain: null,
-            practise: null
+            practise: null,
+            first: "#Creating an integer variable",
+            second: "my_integer",
+            third: "=",
+            fourth: "5",
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: "second-third-fourth"
         );
 
         $this->createQuestion(
@@ -202,7 +193,18 @@ class PythonSeeder extends Seeder
             desc2: null,
             example: "#Creating a float variable \n\nmy_float = 3.14",
             explain: null,
-            practise: null
+            practise: null,
+            first: "#Creating an float variable",
+            second: "my_float",
+            third: "=",
+            fourth: "3.14",
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: "second-third-fourth"
         );
 
         $this->createQuestion(
@@ -246,7 +248,18 @@ class PythonSeeder extends Seeder
             desc2: null,
             example: "# Creating a string variable \n\nmy_string = 'Hello, world!'",
             explain: null,
-            practise: null
+            practise: null,
+            first: "#Creating an string variable",
+            second: "my_string",
+            third: "=",
+            fourth: "'Hello, World'",
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: "second-third-fourth"
         );
 
         $this->createQuestion(
@@ -289,7 +302,18 @@ class PythonSeeder extends Seeder
             desc2: "Here's an example of how to create variables of Boolean data type:",
             example: "#Creating variables of Boolean data type \n\nmy_boolean1 = True \n\nmy_boolean2 = False",
             explain: null,
-            practise: null
+            practise: null,
+            first: "#Creating an boolean variable",
+            second: "my_boolean1",
+            third: "=",
+            fourth: "False",
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: "second-third-fourth"
         );
 
         $this->createQuestion(
@@ -323,10 +347,10 @@ class PythonSeeder extends Seeder
         );
 
 
-        /**************************PYthon Course 3 End *******************************/
+        /**************************Python Course 3 End *******************************/
 
 
-        /**************************PYthon Course 4 Start *******************************/
+        /**************************Python Course 4 Start *******************************/
         $this->createCourse(
             title: "Loops",
             desc: "Loops allow you to repeat a set of instructions a certain number of times or until a certain condition is met. There are two types of loops in Python: 'For Loop' and 'While Loop'.",
@@ -343,7 +367,18 @@ class PythonSeeder extends Seeder
             desc2: "Here's an example of a for loop that prints the numbers from 1 to 5:",
             example: "#Using a for loop to print numbers from 1 to 5 \n\nfor i in range(1, 6): \nprint(i)",
             explain: "In this example, the range() function creates a sequence of numbers from 1 to 5 (excluding 6), and the for loop iterates through each number in the sequence and prints it.",
-            practise: null
+            practise: null,
+            first: "#Using a for loop to print numbers from 1 to 5",
+            second: "for i in range(1, 6):",
+            third: "\t\tprint(i)",
+            fourth: null,
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: "second-third"
         );
 
         $this->createQuestion(
@@ -365,7 +400,18 @@ class PythonSeeder extends Seeder
             desc2: "Here's an example of a while loop that prints the numbers from 1 to 5:",
             example: "# Using a while loop to print numbers from 1 to 5 \ni=1 \nwhile \n\ni <= 5: \n\nprint(i) i += 1",
             explain: "In this example, the while loop repeats as long as the variable i is less than or equal to 5. The code inside the loop prints the current value of i, and then increments i by 1.",
-            practise: null
+            practise: null,
+            first: "#Using a for while loop to print numbers from 1 to 5",
+            second: "i=1",
+            third: "while i <= 5",
+            fourth: "\t\tprint(i)",
+            fifth: "\t\ti += 1",
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: "second-third-fourth-fifth"
         );
 
         $this->createQuestion(
@@ -377,9 +423,9 @@ class PythonSeeder extends Seeder
             image: null,
             topicId: 8,
         );
-        /**************************PYthon Course 4 End *******************************/
+        /**************************Python Course 4 End *******************************/
 
-        /**************************PYthon Course 5 Start *******************************/
+        /**************************Python Course 5 Start *******************************/
         $this->createCourse(
             title: "Conditional Statements",
             desc: "Conditional statements allow you to control the flow of your program based on certain conditions. There are three types of conditional statements in Python: if statement, if-else statement, and if-elif-else statement.",
@@ -396,7 +442,18 @@ class PythonSeeder extends Seeder
             desc2: "Here's an example of an if statement that checks if a number is positive:",
             example: "#Using an if statement to check if a number is positive \n\nnum = 5 \nif num > 0: \n\t\tprint('The number is positive')",
             explain: "In this example, the if statement checks if the variable num is greater than 0. If the condition is true, the code inside the if block (in this case, the print statement) is executed.",
-            practise: null
+            practise: null,
+            first: "#Using an if statement to check if a number is positive",
+            second: "num = 5",
+            third: "if num > 0:",
+            fourth: "\t\tprint('The number is positive')",
+            fifth: null,
+            sixth: null,
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: "second-third-fourth"
         );
 
         $this->createQuestion(
@@ -418,7 +475,18 @@ class PythonSeeder extends Seeder
             desc2: "Here's an example of an if-else statement that checks if a number is positive or negative:",
             example: "#Using an if-else statement to check if a number is positive or negative \n\nnum = -3 \nif num > 0: \n\t\t\tprint('The number is positive') \nelse: \n\t\t\tprint('The number is negative')",
             explain: "In this example, the if statement checks if the variable num is greater than 0. If the condition is true, the code inside the if block (in this case, the first print statement) is executed. If the condition is false, the code inside the else block (in this case, the second print statement) is executed.",
-            practise: null
+            practise: null,
+            first: "#Using an if-else statement to check if a number is positive or negative",
+            second: "num = -3",
+            third: "if num > 0:",
+            fourth: "\t\tprint('The number is positive')",
+            fifth: "else",
+            sixth: "\t\tprint('The number is negative')",
+            seventh: null,
+            eighth: null,
+            ninth: null,
+            tenth: null,
+            order: "second-third-fourth-fifth-sixth"
         );
 
         $this->createQuestion(
@@ -441,7 +509,18 @@ class PythonSeeder extends Seeder
             desc2: "Here's an example of an if-elif-else statement that checks the grade of a student:",
             example: "#Using an if-elif-else statement to check the grade of a student \nscore = 75 \nif score >= 90: \n\t\t\tgrade = 'A' \nelif score >= 80: \n\t\t\tgrade = 'B' \nelif score >= 70: \n\t\t\tgrade = 'C' \nelif score >= 60: \n\t\t\tgrade = 'D' \nelse: \n\t\t\tgrade = 'F' \nprint('Your grade is', grade)",
             explain: "In this example, the if-elif-else statement checks the value of the variable score and assigns a grade based on the value. If the score is greater than or equal to 90, the grade is 'A'. If the score is greater than or equal to 80, the grade is 'B', and so on.",
-            practise: null
+            practise: null,
+            first: "#Using an if-elif-else statement to check the grade of a student",
+            second: "score = 75",
+            third: "if score >= 90:",
+            fourth: "\t\tgrade = 'A'",
+            fifth: "elif score >= 80:",
+            sixth: "\t\tgrade = 'B')",
+            seventh: "else",
+            eighth: "\t\tgrade = 'C'",
+            ninth: "\n\nprint('Your grade is', grade)",
+            tenth: null,
+            order: "second-third-fourth-fifth-sixth-seventh-eighth-ninth"
         );
 
         $this->createQuestion(
@@ -455,5 +534,57 @@ class PythonSeeder extends Seeder
         );
 
         /**************************PYthon Course 5 End *******************************/
+    }
+
+    private function createCourse($title, $desc, $subDesc): void
+    {
+        Course::create([
+            'title' => $title,
+            'slug' => Str::slug($title),
+            "desc" => $desc,
+            "sub_desc" => $subDesc,
+            'language_id' => 1,
+        ]);
+    }
+
+    private function createTopics($id, $title, $video, $title2, $desc, $desc2, $example, $explain, $practise, $first, $second, $third, $fourth, $fifth, $sixth, $seventh, $eighth, $ninth, $tenth, $order): void
+    {
+        Topic::create([
+            'title' => $title,
+            'slug' => Str::slug($title),
+            'course_id' => $id,
+            'video_url' => $video,
+            'learning_title' => $title2,
+            'learning_desc' => $desc,
+            'learning_desc_sub' => $desc2,
+            "code_example" => $example,
+            "code_explanation" => $explain,
+            "code_practise" => $practise,
+            "code_first_line" => $first,
+            "code_second_line" => $second,
+            "code_third_line" => $third,
+            "code_fourth_line" => $fourth,
+            "code_fifth_line" => $fifth,
+            "code_six_line" => $sixth,
+            "code_seven_line" => $seventh,
+            "code_eight_line" => $eighth,
+            "code_nine_line" => $ninth,
+            "code_ten_line" => $tenth,
+            "code_order" => $order,
+        ]);
+    }
+
+    private function createQuestion($title, $a, $b, $c, $correct, $image, $topicId): void
+    {
+        Question::create([
+            'title' => $title,
+            'slug' => Str::slug($title),
+            'choice_one' => $a,
+            'choice_two' => $b,
+            'choice_three' => $c,
+            'correct_answer' => $correct,
+            'code_image_url' => $image,
+            'topic_id' => $topicId,
+        ]);
     }
 }
